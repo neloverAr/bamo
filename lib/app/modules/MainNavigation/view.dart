@@ -4,6 +4,7 @@ import 'package:bamo/app/core/theme/style_helper.dart';
 import 'package:bamo/app/core/utils/extensions.dart';
 import 'package:bamo/app/modules/MainNavigation/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -22,7 +23,7 @@ class MainNavigation extends StatelessWidget with StylesHelper{
       return Scaffold(
         key: controller.key,
         appBar: AppBar(
-          toolbarHeight: 80,
+          toolbarHeight: 80.h,
           shadowColor: Color(0xFF18274B).withOpacity(.12),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -32,7 +33,7 @@ class MainNavigation extends StatelessWidget with StylesHelper{
           flexibleSpace: SafeArea(
             child: Padding(
               padding: EdgeInsets.only(
-                left: 20.0,
+                left: 20.w,
                 //  top:32.0,
                 //bottom: 20.0
               ),
@@ -64,7 +65,7 @@ class MainNavigation extends StatelessWidget with StylesHelper{
             fit: StackFit.expand,
             children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: controller.pages[controller.index.value].page,
             ),
             PositionedDirectional(
@@ -74,7 +75,8 @@ class MainNavigation extends StatelessWidget with StylesHelper{
                 child:
                 Container(
                   //margin: const EdgeInsets.symmetric(horizontal: 20, ),
-                  padding: EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 18.w,
+                      vertical: 10.h),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(30)
