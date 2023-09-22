@@ -16,22 +16,18 @@ mixin StylesHelper {
     return LinearGradient(
       begin: axis == Axis.vertical
           ? AlignmentDirectional.topCenter
-          : AlignmentDirectional.centerEnd,
+          : AlignmentDirectional.centerStart,
       end: axis == Axis.vertical
           ? AlignmentDirectional.bottomCenter
-          : AlignmentDirectional.centerStart,
+          : AlignmentDirectional.centerEnd,
       colors: colors ??
           [
-            Color(0xFF3E32D1),
             Color(0xFF4C91FF),
+            Color(0xFF3E32D1),
           ],
     );
   }
 
-  List<Color> get secondaryGradientColors => [
-    const Color(0xffFCBB2F),
-    const Color(0xffF6A81A),
-  ];
 
   Color convertHexadecimalStringToColor({required String hexadecimal}) {
     String newHexadecimal = hexadecimal.substring(1);

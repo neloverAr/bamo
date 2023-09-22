@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppButton extends StatelessWidget {
   final String title;
   final double height;
   final double? width;
-  final double elevation;
+  final LinearGradient? linearGradient;
   final double borderRadius;
+  final Color? borderColor;
   final double fontSize;
   final Color color;
   final BorderSide? borderSide;
   final Color fontColor;
   final void Function() onPressed;
-  final bool isLoading;
   final FontWeight fontWeight;
-  final bool? isdisabled;
   final TextStyle? style;
   final  TextAlign? textAlign;
   const AppButton(
@@ -20,58 +20,35 @@ class AppButton extends StatelessWidget {
         required this.color,
         this.fontColor = Colors.white,
         this.borderSide,
-        this.height = 55,
-        this.elevation = 1.5,
+        this.height = 48,
         this.fontWeight = FontWeight.w500,
         this.width,
         this.borderRadius = 12,
-        this.fontSize = 16,
-        required this.isLoading,
+        this.fontSize = 14,
         required this.title,
-        required this.onPressed, this.isdisabled,this.style,this.textAlign})
+        required this.onPressed,this.style,this.textAlign, this.linearGradient,
+        this.borderColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width?.toDouble() ?? 1,
-      height: height,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
-
-          elevation: elevation,
-          backgroundColor: color,
-          shape: RoundedRectangleBorder(
-            side: borderSide ?? BorderSide.none,
-            borderRadius: BorderRadius.circular(
-              borderRadius,
-            ),
-          ),
-          minimumSize: Size(
-            width?.toDouble() ?? 1,
-            height,
-          ),
-          // width: width?.toDouble() ?? 1.sw,
-          alignment: Alignment.center,
+    return Container(
+      height: height.h,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+        border: Border.all(
+          color: borderColor??Colors.transparent
         ),
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        onPressed: isdisabled == true ? null : () {
-          onPressed();
-        },
+        gradient: linearGradient
+      ),child: InkWell(
+      onTap: onPressed,
+      borderRadius: BorderRadius.circular(borderRadius),
         child: Center(
-          child: Text(
-            title,
-            textAlign: textAlign ?? TextAlign.center,
-            style: style ?? TextStyle(
-              color: fontColor,
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-            ),
-            // style: AppTextStyles.r16.copyWith(
-            //   color: Colors.white,
-            // ),
-          ),
+          child: Text(title,style: TextStyle(
+            fontSize: fontSize,
+            color: fontColor,
+            fontWeight: fontWeight)),
         ),
       ),
     );

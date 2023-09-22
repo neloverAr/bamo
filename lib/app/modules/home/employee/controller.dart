@@ -1,7 +1,7 @@
 
 import 'package:get/get.dart';
 
-class HomePageController extends GetxController {
+class EmployeeHomePageController extends GetxController {
 
   @override
   void onInit() {

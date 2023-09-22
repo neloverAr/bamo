@@ -1,0 +1,3 @@
+
+enum Users
+{ employee, employer }

@@ -1,39 +1,36 @@
 
 import 'package:bamo/app/core/values/icons.dart';
+import 'package:bamo/app/functions/nextRoute.dart';
 import 'package:bamo/app/modules/chats/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../../core/values/colors.dart';
-import '../../data/models/PageData.dart';
-import '../home/view.dart';
+import '../../../core/values/colors.dart';
+import '../../../data/models/PageData.dart';
+import '../../home/employer/view.dart';
 
-class MainNavigationController extends GetxController {
+class EmployerMainNavigationController extends GetxController {
   RxInt index = 0.obs;
   late List<PageData> pages;
   final GlobalKey<ScaffoldState> key = GlobalKey();
   setPages() {
     pages = [
       PageData(
-          page: const HomePage(),
-          icon: SvgPicture.asset(AppIcon.offers,color: AppColor.grey,),
-          iconSelected: SvgPicture.asset(AppIcon.offers),
-          index: 0,
+          page:  EmployerHomePage(),
+          icon: AppIcon.offers,
           title: "Mes Offres"
       ),
       PageData(
           page:  const ChatsScreen(),
-          icon: SvgPicture.asset(AppIcon.chats,color: AppColor.grey,),
-          index: 1,
-          iconSelected: SvgPicture.asset(AppIcon.chats,color: AppColor.primaryColor,),
+          icon: AppIcon.chats,
           title: "chats"
       ),
     ];
   }
   changePage(int newIndex) {
-    // if (index == newIndex) {
-    //   return;
-    // }
+    if (index == newIndex) {
+      return;
+    }
     index.value = newIndex;
   }
 
@@ -51,6 +48,10 @@ class MainNavigationController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  goToCenterIconScreen(){
+    Get.toNamed(getNextRoute("addIcon"));
   }
 
 }

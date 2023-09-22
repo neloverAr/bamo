@@ -14,15 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(390, 891),
+      designSize: const Size(390, 844),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_ , child){
         return GetMaterialApp(
           theme: ThemeData(
               useMaterial3: false,
-              fontFamily: "Poppins"
-
+              fontFamily: "Poppins",
           ),
           getPages: AppPages.routes,
           title: 'Bamo',

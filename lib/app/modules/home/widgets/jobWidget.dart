@@ -1,3 +1,4 @@
+import 'package:bamo/app/core/constants/padding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,6 +25,7 @@ class JobWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 319.h,
+      margin: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
@@ -67,31 +69,34 @@ class JobWidget extends StatelessWidget {
           ),
           //////////////////////////////////////
           //Data
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 5.h),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(jobName,style: AppTextStyles.b14,),
-                SizedBox(height: 12.h,),
-                Row(children: [
-                  SvgPicture.asset(AppIcon.locationGrey),
-                  SizedBox(width: 6.w,),
-                  Text(jobLocation,style: AppTextStyles.r10,),
-                ],),
-                SizedBox(height:8.h ,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(children: [
-                      SvgPicture.asset(AppIcon.wallet),
-                      SizedBox(width: 6.w,),
-                      Text(jobSalary,style: AppTextStyles.r10,),
-                    ],),
-                    Text("$days jours restants"),
-                  ],)
-              ],
+          Container(
+            height: 102.h,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w,),//vertical: 5.h
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(jobName,style: AppTextStyles.b14,),
+                  SizedBox(height: 12.h,),
+                  Row(children: [
+                    SvgPicture.asset(AppIcon.locationGrey),
+                    SizedBox(width: 6.w,),
+                    Text(jobLocation,style: AppTextStyles.r10,),
+                  ],),
+                  SizedBox(height:8.h ,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(children: [
+                        SvgPicture.asset(AppIcon.wallet),
+                        SizedBox(width: 6.w,),
+                        Text(jobSalary,style: AppTextStyles.r10,),
+                      ],),
+                      Text("$days jours restants"),
+                    ],)
+                ],
+              ),
             ),
           ),
           ///////

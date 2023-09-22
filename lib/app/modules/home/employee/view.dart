@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/theme/app_text_style.dart';
+import '../../../core/theme/app_text_style.dart';
 
 
-class HomePage extends StatelessWidget{
-  const HomePage({Key? key}) : super(key: key);
-
+class EmployeeHomePage extends StatelessWidget{
+  EmployeeHomePage({Key? key}) : super(key: key);
+  //EmployerHomePageController controller =
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -29,6 +29,9 @@ class HomePage extends StatelessWidget{
                 image: AppImage.card2, jobSalary: "30,000 - 60,000 DA"),
             //////////////////////////////////////////////////////////////////
             SizedBox(height: 16.h,),
+            const JobWidget(jobName: "Développeur Flutter", jobLocation: "Birkhadem, Alger", days: 29, waiting: 0,
+                determined: 8, rejected: 8, image: AppImage.card1, jobSalary: "60,000 - 90,000 DA"),
+
           ],
         );
   }
