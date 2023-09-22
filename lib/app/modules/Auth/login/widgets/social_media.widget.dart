@@ -6,8 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/theme/app_text_style.dart';
 
 class SocialMediaWidget extends StatelessWidget {
-  SocialMediaWidget({Key? key, required this.object,this.onTap}) : super(key: key);
+  SocialMediaWidget({Key? key, required this.object,this.onTap,this.title}) : super(key: key);
   SocailMedia object;
+  String? title;
   Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -26,9 +27,9 @@ class SocialMediaWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SvgPicture.asset(object.icon),
+            SvgPicture.asset(object.icon,height: 30,),
             Text(
-              object.title,
+              title != null ? (title ?? "") : object.title,
               style: AppTextStyles.b14,
               textAlign: TextAlign.center,
             )
@@ -57,7 +58,15 @@ enum SocailMedia {
       case SocailMedia.google:
         return "Se connecter avec Google";
       case SocailMedia.facebook:
-        return "Se connecter avec Google";
+        return "Se connecter avec Facebook";
+    }
+  }
+  String get signUpTitle {
+    switch (this) {
+      case SocailMedia.google:
+        return "Google";
+      case SocailMedia.facebook:
+        return "Facebook";
     }
   }
 }

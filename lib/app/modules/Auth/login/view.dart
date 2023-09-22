@@ -3,10 +3,18 @@ import 'package:bamo/app/core/utils/extensions.dart';
 import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/core/values/icons.dart';
 import 'package:bamo/app/core/values/images_path.dart';
+import 'package:bamo/app/modules/Auth/confirmation_login/view.dart';
 import 'package:bamo/app/modules/Auth/login/widgets/social_media.widget.dart';
 import 'package:bamo/app/modules/widgets/AppButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+
+import '../../../routes/pages_routes.dart';
+import '../../../routes/pages_routes.dart';
+import '../../../routes/pages_routes.dart';
+import '../../../routes/pages_routes.dart';
+import '../../../routes/pages_routes.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -17,6 +25,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: ListView(
+          shrinkWrap: true,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           physics: const ClampingScrollPhysics(),
           padding: EdgeInsetsDirectional.symmetric(
@@ -80,15 +89,22 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             4.hp,
-            Text(
-              "Mot de passe oublié ?",
-              style: AppTextStyles.b12.copyWith(color: AppColor.blueGradient),
+            GestureDetector(
+              onTap: (){
+                Get.toNamed(AppRoutes.restPasswordStepOne);
+              },
+              child: Text(
+                "Mot de passe oublié ?",
+                style: AppTextStyles.b12.copyWith(color: AppColor.blueGradient),
+              ),
             ),
             40.hp,
             AppButton(
                 color: AppColor.blueGradient,
                 title: "Commencer",
-                onPressed: () {}),
+                onPressed: () {
+                  Get.to(() => ConfirmationScreen(pageType: ConfirmationStatus.login));
+                }),
             40.hp,
             Row(
               children: [
