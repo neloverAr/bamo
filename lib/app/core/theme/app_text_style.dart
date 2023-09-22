@@ -46,4 +46,10 @@ class AppTextStyles {
       height: 1.3,
       color: AppColor.labelBlack
   );
+  static TextStyle get b32 =>  TextStyle(
+      fontSize: 32.sp,
+      fontWeight: FontWeight.w500,
+      height: 1.3,
+      color: AppColor.labelBlack
+  );
 }

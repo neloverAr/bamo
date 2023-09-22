@@ -1,6 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+extension sizedBoxExtension on num {
+  Widget get hp => toDouble().verticalSpace;
+
+  Widget get wp => toDouble().horizontalSpace;
+}
+
 
 extension PercentSized on double{
   double get hp => (Get.height * (this/100));//height points

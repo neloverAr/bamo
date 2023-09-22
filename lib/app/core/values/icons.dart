@@ -26,6 +26,13 @@ class AppIcon{
   static const clipboard = "${baseUrl}clipboard-text.svg";
   static const locationFloating = "${baseUrl}locationFloating.svg";
 
+
+
+  static const email = "${baseUrl}email.svg";
+  static const lock = "${baseUrl}lock.svg";
+  static const google = "${baseUrl}google.svg";
+  static const facebook = "${baseUrl}Facebook.svg";
+
 }
 
 
