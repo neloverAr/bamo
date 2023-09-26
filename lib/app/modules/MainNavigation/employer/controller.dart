@@ -12,7 +12,6 @@ import '../../home/employer/view.dart';
 class EmployerMainNavigationController extends GetxController {
   RxInt index = 0.obs;
   late List<PageData> pages;
-  final GlobalKey<ScaffoldState> key = GlobalKey();
   setPages() {
     pages = [
       PageData(

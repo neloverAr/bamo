@@ -90,6 +90,12 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Poppins-bold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+    - family: Poppins-medium
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

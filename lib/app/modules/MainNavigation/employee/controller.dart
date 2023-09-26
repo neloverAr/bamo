@@ -1,6 +1,9 @@
 
 import 'package:bamo/app/core/values/icons.dart';
 import 'package:bamo/app/functions/nextRoute.dart';
+import 'package:bamo/app/modules/freelancer/view.dart';
+import 'package:bamo/app/modules/partTime/view.dart';
+import 'package:bamo/app/modules/stage/view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/models/PageData.dart';
@@ -9,6 +12,7 @@ import '../../home/employee/view.dart';
 class EmployeeMainNavigationController extends GetxController {
   RxInt index = 0.obs;
   late List<PageData> pages;
+
   setPages() {
     pages = [
       PageData(
@@ -17,17 +21,17 @@ class EmployeeMainNavigationController extends GetxController {
           title: "Permanent"
       ),
       PageData(
-          page:  Text("partTime"),
+          page:  PartTimeScreen(),
           icon: AppIcon.partTime,
           title: "Mi-temps"
       ),
       PageData(
-          page:  Text("Freelance"),
+          page:  FreelancerScreen(),
           icon: AppIcon.freelance,
           title: "Freelance"
       ),
       PageData(
-          page: Text("Stage"),
+          page: StageScreen(),
           icon: AppIcon.stage,
           title: "Stage"
       ),

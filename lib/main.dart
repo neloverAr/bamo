@@ -1,10 +1,21 @@
+import 'package:bamo/app/core/values/colors.dart';
+import 'package:bamo/app/data/services/storage/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'app/core/utils/keys.dart';
 import 'app/routes/pages_routes.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  await GetStorage.init();
+  await initialServices();
+  StorageService storageService = Get.find();
+  storageService.write(isLoggedIn, false);
   runApp(const MyApp());
 }
 
@@ -22,6 +33,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
               useMaterial3: false,
               fontFamily: "Poppins",
+            primaryColor: AppColor.primaryColor
           ),
           getPages: AppPages.routes,
           title: 'Bamo',

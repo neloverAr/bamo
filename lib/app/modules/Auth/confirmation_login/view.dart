@@ -1,19 +1,27 @@
+import 'package:bamo/app/core/constants/AppGradient.dart';
 import 'package:bamo/app/core/theme/app_text_style.dart';
 import 'package:bamo/app/core/utils/extensions.dart';
 import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/core/values/images_path.dart';
+import 'package:bamo/app/data/services/storage/services.dart';
+import 'package:bamo/app/modules/MainNavigation/employee/view.dart';
+import 'package:bamo/app/modules/home/employee/view.dart';
 import 'package:bamo/app/modules/widgets/AppButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../core/utils/keys.dart';
+
 class ConfirmationScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> keyConfirmation = GlobalKey();
   ConfirmationScreen({Key? key, required this.pageType}) : super(key: key);
   ConfirmationStatus pageType;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: keyConfirmation,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -50,7 +58,12 @@ class ConfirmationScreen extends StatelessWidget {
                   height: 50,
                   color: AppColor.blueGradient,
                   title: "Trouver un Job",
-                  onPressed: () {}),
+                  linearGradient: AppGradient.horizontalBlueGradient,
+                  onPressed: () {
+                    StorageService storageService = Get.find();
+                    storageService.write(isLoggedIn, true);
+                    Get.to(EmployeeMainNavigation());
+                  }),
               Visibility(
                 visible: pageType == ConfirmationStatus.signUp,
                   child: Column(

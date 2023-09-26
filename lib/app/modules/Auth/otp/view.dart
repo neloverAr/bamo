@@ -13,6 +13,7 @@ import '../confirmation_login/view.dart';
 import 'controller.dart';
 
 class OtpScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> keyOpt = GlobalKey();
   OtpScreen({
     Key? key,
   }) : super(key: key);
@@ -22,6 +23,7 @@ class OtpScreen extends StatelessWidget {
 
     controller.startTimer();
     return Scaffold(
+      key: keyOpt,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -30,7 +32,7 @@ class OtpScreen extends StatelessWidget {
             onTap: () {
               Get.back();
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.grey,
             )),

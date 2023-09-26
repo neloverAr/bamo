@@ -1,3 +1,4 @@
+import 'package:bamo/app/functions/getFontsFamily.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppButton extends StatelessWidget {
@@ -8,7 +9,7 @@ class AppButton extends StatelessWidget {
   final double borderRadius;
   final Color? borderColor;
   final double fontSize;
-  final Color color;
+  final Color? color;
   final BorderSide? borderSide;
   final Color fontColor;
   final void Function() onPressed;
@@ -17,7 +18,7 @@ class AppButton extends StatelessWidget {
   final  TextAlign? textAlign;
   const AppButton(
       {Key? key,
-        required this.color,
+        this.color,
         this.fontColor = Colors.white,
         this.borderSide,
         this.height = 48,
@@ -34,6 +35,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height.h,
+      width: width??double.infinity,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(borderRadius),
@@ -41,17 +43,27 @@ class AppButton extends StatelessWidget {
           color: borderColor??Colors.transparent
         ),
         gradient: linearGradient
-      ),child: InkWell(
-      onTap: onPressed,
-      borderRadius: BorderRadius.circular(borderRadius),
-        child: Center(
-          child: Text(title,style: TextStyle(
-            fontSize: fontSize,
-            color: fontColor,
-            fontWeight: fontWeight)),
-        ),
+      ),child: ElevatedButton(
+        onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius),),
+      ),
+        child: Text(title,
+            style: TextStyle(
+      fontSize: fontSize,
+      color: fontColor,
+      fontWeight: fontWeight,fontFamily: fontMedium)),
       ),
     );
 
   }
 }
+
+// Center(
+//   child: Text(title,style: TextStyle(
+//     fontSize: fontSize,
+//     color: fontColor,
+//     fontWeight: fontWeight)),
+// ),

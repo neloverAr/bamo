@@ -1,3 +1,4 @@
+import 'package:bamo/app/core/constants/appShadow.dart';
 import 'package:bamo/app/core/constants/padding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,14 +30,7 @@ class JobWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-                spreadRadius: 5,
-                blurRadius:40 ,
-                offset: Offset(0,16),
-                color: Color(0xFF7090B0).withOpacity(.25)
-            )
-          ]
+          boxShadow: jobCardShadow
       ),
       child: Column(
         children: [
@@ -82,7 +76,7 @@ class JobWidget extends StatelessWidget {
                   Row(children: [
                     SvgPicture.asset(AppIcon.locationGrey),
                     SizedBox(width: 6.w,),
-                    Text(jobLocation,style: AppTextStyles.r10,),
+                    Text(jobLocation,style: AppTextStyles.m10,),
                   ],),
                   SizedBox(height:8.h ,),
                   Row(
@@ -91,7 +85,7 @@ class JobWidget extends StatelessWidget {
                       Row(children: [
                         SvgPicture.asset(AppIcon.wallet),
                         SizedBox(width: 6.w,),
-                        Text(jobSalary,style: AppTextStyles.r10,),
+                        Text(jobSalary,style: AppTextStyles.m10,),
                       ],),
                       Text("$days jours restants"),
                     ],)

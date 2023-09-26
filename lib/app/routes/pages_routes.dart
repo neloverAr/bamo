@@ -6,9 +6,12 @@ import 'package:bamo/app/modules/Auth/signup/view.dart';
 import 'package:bamo/app/modules/MainNavigation/employer/view.dart';
 import 'package:bamo/app/modules/SelectUser/view.dart';
 import 'package:bamo/app/modules/chats/view.dart';
+import 'package:bamo/app/modules/freelancer/view.dart';
 import 'package:bamo/app/modules/home/employer/view.dart';
+import 'package:bamo/app/modules/partTime/view.dart';
 import 'package:bamo/app/modules/re_set_password_verfication/view.dart';
 import 'package:bamo/app/modules/splash/view.dart';
+import 'package:bamo/app/modules/stage/view.dart';
 import 'package:get/get.dart';
 import '../modules/MainNavigation/employee/view.dart';
 import '../modules/home/employee/view.dart';
@@ -27,6 +30,9 @@ class AppPages {
     GetPage(name: AppRoutes.otp, page: () => OtpScreen()),
     GetPage(name: AppRoutes.restPasswordStepOne, page: () => RestPasswordStepOneScreen()),
     GetPage(name: AppRoutes.restPasswordStepTwo, page: () => RestPasswordStepTwoScreen()),
+    GetPage(name: AppRoutes.partTime, page: () => PartTimeScreen()),
+    GetPage(name: AppRoutes.freelance, page: () => FreelancerScreen()),
+    GetPage(name: AppRoutes.stage, page: () => StageScreen()),
 
   ];
 }
@@ -44,6 +50,9 @@ class AppRoutes {
   static const String otp = '/OtpScreen';
   static const String restPasswordStepOne = '/RestPasswordStepOneScreen';
   static const String restPasswordStepTwo = '/RestPasswordStepTwoScreen';
+  static const String partTime = '/PartTime';
+  static const String freelance = '/Freelance';
+  static const String stage = '/stage';
 
 
 

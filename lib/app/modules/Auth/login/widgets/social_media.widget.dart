@@ -1,6 +1,7 @@
 import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/core/values/icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/app_text_style.dart';
@@ -24,16 +25,20 @@ class SocialMediaWidget extends StatelessWidget {
             color: AppColor.ColorF4F4F4,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(width: 2, color: AppColor.ColorF7F7F7)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            SvgPicture.asset(object.icon,height: 30,),
-            Text(
-              title != null ? (title ?? "") : object.title,
-              style: AppTextStyles.b14,
-              textAlign: TextAlign.center,
-            )
-          ],
+        child: Center(
+          child: Row(
+            children: [
+              Expanded(flex:1,child: SvgPicture.asset(object.icon,height: 30,)),
+              Expanded(
+                flex: 5,
+                child: Text(
+                  title != null ? (title ?? "") : object.title,
+                  style: AppTextStyles.b14,
+                  textAlign: TextAlign.center,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

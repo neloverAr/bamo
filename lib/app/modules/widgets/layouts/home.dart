@@ -1,54 +1,49 @@
 
-import 'package:bamo/app/core/constants/padding.dart';
 import 'package:bamo/app/core/theme/style_helper.dart';
+import 'package:bamo/app/core/values/icons.dart';
+import 'package:bamo/app/modules/appDrawer/view.dart';
 import 'package:bamo/app/modules/widgets/iconAndLabel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../core/values/icons.dart';
+import '../../../core/utils/keys.dart';
 import '../../../data/models/PageData.dart';
 
 class HomeLayout extends StatelessWidget with StylesHelper{
-  final double appBarHeight;
-  final Widget appBarContent;
+  final AppBar? appBar;
   final Widget screenContent;
   final List<PageData> pages;
   final Widget centerIcon;
   final Widget? floatingActionButton;
+  final Color? scaffoldBG;
   final int currentIndex;
   final Function() onTap;
   final controller;
 
-  HomeLayout({Key? key, required this.appBarHeight,
-    required this.appBarContent, required this.screenContent,
+  HomeLayout({Key? key,
+    this.appBar, required this.screenContent,
     required this.pages, this.floatingActionButton,
     required this.centerIcon,
-    required this.currentIndex, required this.onTap, this.controller}) : super(key: key);
+    required this.currentIndex, required this.onTap,
+    this.controller, this.scaffoldBG}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: appBarHeight,
-        shadowColor: Color(0xFF18274B).withOpacity(.12),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(30),
+      appBar: appBar,
+      backgroundColor: scaffoldBG,
+      drawer: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AppDrawer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 50),
+            child: InkWell(
+              onTap: ()=>Navigator.pop(context),
+                child: SvgPicture.asset(AppIcon.closeDrawer)),
           ),
-        ),
-        flexibleSpace: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: AppPadding.mainPadding,
-              //  top:32.0,
-              //bottom: 20.0
-            ),
-            child: Center(
-              child: appBarContent,
-            ),
-          ),
-        ),
-        backgroundColor: Colors.white,
+        ],
       ),
       body: Stack(
         fit: StackFit.expand,

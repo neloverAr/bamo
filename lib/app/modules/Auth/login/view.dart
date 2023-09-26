@@ -1,3 +1,4 @@
+import 'package:bamo/app/core/constants/AppGradient.dart';
 import 'package:bamo/app/core/theme/app_text_style.dart';
 import 'package:bamo/app/core/utils/extensions.dart';
 import 'package:bamo/app/core/values/colors.dart';
@@ -9,19 +10,15 @@ import 'package:bamo/app/modules/widgets/AppButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
-import '../../../routes/pages_routes.dart';
-import '../../../routes/pages_routes.dart';
-import '../../../routes/pages_routes.dart';
-import '../../../routes/pages_routes.dart';
 import '../../../routes/pages_routes.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
+  LoginScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> keyLogin = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: keyLogin,
       backgroundColor: Colors.white,
       body: SafeArea(
         child: ListView(
@@ -54,7 +51,10 @@ class LoginScreen extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: "Entrer votre Email",
-                  prefixIcon: Icon(Icons.email,color: Colors.grey,),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SvgPicture.asset(AppIcon.email),
+                  ),
                   border: OutlineInputBorder(
                     // width: 0.0 produces a thin "hairline" border
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
@@ -78,7 +78,10 @@ class LoginScreen extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: "Entrer votre mot de passe",
-                  prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SvgPicture.asset(AppIcon.lock),
+                  ),
                   suffixIcon: Icon(Icons.remove_red_eye_outlined,color: Colors.grey,),
                   border: OutlineInputBorder(
                     // width: 0.0 produces a thin "hairline" border
@@ -95,13 +98,14 @@ class LoginScreen extends StatelessWidget {
               },
               child: Text(
                 "Mot de passe oublié ?",
-                style: AppTextStyles.b12.copyWith(color: AppColor.blueGradient),
+                style: AppTextStyles.b12.copyWith(color: AppColor.primaryColor),
               ),
             ),
             40.hp,
             AppButton(
-                color: AppColor.blueGradient,
+                color: AppColor.primaryColor,
                 title: "Commencer",
+                linearGradient: AppGradient.horizontalBlueGradient,
                 onPressed: () {
                   Get.to(() => ConfirmationScreen(pageType: ConfirmationStatus.login));
                 }),

@@ -1,5 +1,4 @@
 
-import 'package:bamo/app/core/theme/app_text_style.dart';
 import 'package:bamo/app/core/theme/style_helper.dart';
 import 'package:bamo/app/modules/MainNavigation/employer/controller.dart';
 import 'package:bamo/app/modules/widgets/layouts/home.dart';
@@ -7,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
+import '../../../core/constants/padding.dart';
 import '../../../core/values/icons.dart';
+import 'widgets/appBarContent.dart';
 
 class EmployerMainNavigation extends StatelessWidget with StylesHelper{
   EmployerMainNavigation({Key? key}) : super(key: key);
@@ -19,21 +19,31 @@ class EmployerMainNavigation extends StatelessWidget with StylesHelper{
   @override
   Widget build(BuildContext context) {
     return GetX<EmployerMainNavigationController>(builder: (controller){
-      return HomeLayout(appBarHeight: 100.h, appBarContent: ListTile(
-        leading: SvgPicture.asset(AppIcon.logo),
-        title: Text("Global Job",style: AppTextStyles.r14,),
-        subtitle: Row(children: [
-          GradientText(
-            'Alger ',
-            colors: const [
-              Color(0xFF3E32D1),
-              Color(0xFF4C91FF),
-              //Colors.teal,
-            ],
+      return HomeLayout(
+          appBar: AppBar(
+            toolbarHeight:  100.h,
+            shadowColor: Color(0xFF18274B).withOpacity(.12),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(30),
+              ),
+            ),
+            flexibleSpace: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: AppPadding.mainPadding,
+                  //  top:32.0,
+                  //bottom: 20.0
+                ),
+                child: const Center(
+                  child: AppBarContent(),
+                ),
+              ),
+            ),
+            backgroundColor: Colors.white,
           ),
-          SvgPicture.asset(AppIcon.location),
-        ],),
-      ), screenContent: controller.pages[controller.index.value].page,
+
+          screenContent: controller.pages[controller.index.value].page,
           pages: controller.pages,
           centerIcon: GestureDetector(
             onTap: (){

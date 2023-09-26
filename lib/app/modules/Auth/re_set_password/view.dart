@@ -8,6 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../core/values/colors.dart';
 import '../../widgets/AppButton.dart';
 class RestPasswordStepOneScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> keyRestPassword = GlobalKey();
   RestPasswordStepOneScreen({
     Key? key,
   }) : super(key: key);
@@ -15,6 +16,7 @@ class RestPasswordStepOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: keyRestPassword,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,

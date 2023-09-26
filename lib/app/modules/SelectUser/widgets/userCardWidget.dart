@@ -1,7 +1,10 @@
 import 'package:bamo/app/core/theme/app_text_style.dart';
+import 'package:bamo/app/modules/widgets/AppButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../core/constants/appShadow.dart';
 
 class UserCardWidget extends StatelessWidget {
   final String icon;
@@ -20,20 +23,7 @@ class UserCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 14,
-            spreadRadius: -6,
-            offset: Offset(0,6),
-            color: Color(0xFF18274B).withOpacity(.12)
-          ),
-          BoxShadow(
-              blurRadius: 32,
-              spreadRadius: -4,
-              offset: Offset(0,10),
-              color: Color(0xFF18274B).withOpacity(.10)
-          ),
-        ]
+        boxShadow: cardsShadow
       ),
       child: (
       Column(
@@ -57,20 +47,10 @@ class UserCardWidget extends StatelessWidget {
               child: Text(text,style: AppTextStyles.r14,
             textAlign: TextAlign.center,)),
           Spacer(),
-          InkWell(
-            onTap: onTap,
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              height: 38.h,
-              decoration: BoxDecoration(
-                gradient: gradient,
-                borderRadius: BorderRadius.circular(12)
-              ),child: Center(
-              child: Text(buttonText,
-                style: AppTextStyles.b12.copyWith(color: Colors.white),),
-            ),
-            ),
-          )
+          AppButton(//color: Colors.white,
+              title: buttonText, onPressed: onTap,
+            linearGradient: gradient,height: 38.h,fontSize: 12.sp,
+            fontWeight: FontWeight.w600,)
         ],
       )
       ),
