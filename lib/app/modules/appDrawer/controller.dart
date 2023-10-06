@@ -1,5 +1,6 @@
 
 import 'package:bamo/app/modules/MainNavigation/employee/view.dart';
+import 'package:bamo/app/modules/cv/view.dart';
 import 'package:bamo/app/modules/notifications/view.dart';
 import 'package:bamo/app/modules/profile/view.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +17,7 @@ class AppDrawerController extends GetxController {
     ),
     DrawerItem(label: "Mon CV",
       icon: AppIcon.edit,
-      page: ProfileScreen(),
+      page: CVScreen(),
     ),
     DrawerItem(label: "Notifications",
       icon: AppIcon.notification,

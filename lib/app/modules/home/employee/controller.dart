@@ -1,6 +1,5 @@
 
 import 'package:get/get.dart';
-
 import '../../../core/values/images_path.dart';
 import '../../../data/models/job.dart';
 

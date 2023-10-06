@@ -5,6 +5,7 @@ import 'package:bamo/app/core/utils/keys.dart';
 import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/core/values/images_path.dart';
 import 'package:bamo/app/modules/widgets/avatar.dart';
+import 'package:bamo/app/modules/widgets/progressioIndicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -43,27 +44,12 @@ class HeaderLoggedUser extends StatelessWidget {
             },
                 child: SvgPicture.asset(AppIcon.menu)),
           ),SizedBox(height: 16.h,),
-          Container(
-            height: 11.h,
-            width: double.infinity,
-            alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-              color: AppColor.ColorF7F7F7,
-              borderRadius: BorderRadius.circular(9)
-            ),child: FractionallySizedBox(
-            widthFactor: profileCompleted,
-              child: Container(
-              decoration: BoxDecoration(
-                  gradient: AppGradient.curvedGreenGradient,
-                  borderRadius: BorderRadius.circular(9)
-              ),
-          ),
-            ),
-          ),SizedBox(height: 8.h,),
+          ProgressionIndicator(progress: profileCompleted),
+          SizedBox(height: 8.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Bamo en progression de ${profileCompleted*100}%"),
+              Text("Bamo en progression de ${(profileCompleted*100).round()}%"),
               InkWell(
                 onTap: (){
                   //TODO

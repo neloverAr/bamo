@@ -74,14 +74,14 @@ class OtpScreen extends StatelessWidget {
                 }, // end onSubmit
               ),
               80.hp,
-              Text("Vous n'avez pas reçu de code ?",style: AppTextStyles.r14,textAlign: TextAlign.center,),
+              Text("Vous n'avez pas reçu de code ?",style: AppTextStyles.r14484848,textAlign: TextAlign.center,),
               8.hp,
               Text("Demander à nouveau",style: AppTextStyles.b14,textAlign: TextAlign.center,),
               24.hp,
               GetBuilder<OTPController>(builder: (controller){
                 return Text(
                   '00:${controller.start.toString()}'
-                  ,style: AppTextStyles.r14,textAlign: TextAlign.center,
+                  ,style: AppTextStyles.r14484848,textAlign: TextAlign.center,
                 );
               }),
               24.hp,

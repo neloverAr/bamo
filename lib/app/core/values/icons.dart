@@ -8,7 +8,9 @@ class AppIcon{
   static const edit = "${baseUrl}edit.svg";
   static const notification = "${baseUrl}notification.svg";
   static const fqa = "${baseUrl}info-circle.svg";
+  static const warning = "${baseUrl}info-circle.svg";
   static const share = "${baseUrl}share.svg";
+  static const shareDetailPage = "${baseUrl}ic_sharp-share.svg";
   static const wallet = "${baseUrl}wallet.svg";
   static const offers = "${baseUrl}briefcase.svg";
   static const location = "${baseUrl}location.svg";

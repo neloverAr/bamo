@@ -3,6 +3,8 @@ import 'package:bamo/app/data/services/storage/services.dart';
 import 'package:bamo/app/modules/EmployeeMainPagesContent/widgets/headerLoggedUser.dart';
 import 'package:bamo/app/modules/EmployeeMainPagesContent/widgets/lastOffersWidget.dart';
 import 'package:bamo/app/modules/EmployeeMainPagesContent/widgets/tagWidget.dart';
+import 'package:bamo/app/modules/OfferDetails/view.dart';
+import 'package:bamo/app/modules/widgets/horizontalList.dart';
 import 'package:bamo/app/modules/widgets/lastOfferSpecificWidget.dart';
 import 'package:bamo/app/modules/widgets/titleSpaceBetween.dart';
 import 'package:flutter/material.dart';
@@ -126,16 +128,7 @@ class EmployeeMainPagesContent extends StatelessWidget {
                   child: TitleSpaceBetween(title: "Dernières Offres",textStyle: AppTextStyles.b16484848,),
                 ),
                 SizedBox(height: 12.h,),
-                SizedBox(
-                  height: 290.h,
-                  child: ListView.separated(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: AppPadding.mainPadding,vertical: 0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context,index)=>LastOffersWidget(job: controller.job[index],),//SvgPicture.asset(controller.companiesIcons[index]),
-                      separatorBuilder: (context,index)=>SizedBox(width:8.w,),
-                      itemCount: controller.job.length),
-                ), //SizedBox(height: 24.h,),
+                HorizontalList(jobs: controller.job),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: AppPadding.mainPadding,vertical: 0),
@@ -146,7 +139,14 @@ class EmployeeMainPagesContent extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding),
-                      child: LastOfferSpecificWidget(job: e, specificIcon: specificIcon, specificType: specificType,),
+                      child: InkWell(
+                          borderRadius: BorderRadius.circular(12),
+                          onTap: (){
+                            //TODO
+                            //Navigate to details
+                            Get.to(()=>OfferDetailsScreen());
+                          },
+                          child: LastOfferSpecificWidget(job: e, specificIcon: specificIcon, specificType: specificType,)),
                     ),
                     SizedBox(height: 16.h,),
                   ],

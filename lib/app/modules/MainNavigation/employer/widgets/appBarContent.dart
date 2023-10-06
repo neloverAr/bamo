@@ -11,7 +11,7 @@ class AppBarContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ListTile(
       leading: SvgPicture.asset(AppIcon.logo),
-      title: Text("Global Job",style: AppTextStyles.r14,),
+      title: Text("Global Job",style: AppTextStyles.r14484848,),
       subtitle: Row(children: [
         GradientText(
           'Alger ',

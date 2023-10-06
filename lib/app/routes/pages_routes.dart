@@ -6,6 +6,7 @@ import 'package:bamo/app/modules/Auth/signup/view.dart';
 import 'package:bamo/app/modules/MainNavigation/employer/view.dart';
 import 'package:bamo/app/modules/SelectUser/view.dart';
 import 'package:bamo/app/modules/chats/view.dart';
+import 'package:bamo/app/modules/cv/view.dart';
 import 'package:bamo/app/modules/freelancer/view.dart';
 import 'package:bamo/app/modules/home/employer/view.dart';
 import 'package:bamo/app/modules/partTime/view.dart';
@@ -33,7 +34,7 @@ class AppPages {
     GetPage(name: AppRoutes.partTime, page: () => PartTimeScreen()),
     GetPage(name: AppRoutes.freelance, page: () => FreelancerScreen()),
     GetPage(name: AppRoutes.stage, page: () => StageScreen()),
-
+    GetPage(name: AppRoutes.cvScreen, page: () => CVScreen()),
   ];
 }
 
@@ -53,7 +54,6 @@ class AppRoutes {
   static const String partTime = '/PartTime';
   static const String freelance = '/Freelance';
   static const String stage = '/stage';
-
-
+  static const String cvScreen = '/cv';
 
 }

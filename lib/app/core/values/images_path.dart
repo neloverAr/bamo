@@ -6,6 +6,7 @@ class AppImage{
   static const card2 = "${baseUrl}card 2.png";
   static const card3 = "${baseUrl}card 3.png";
   static const card4 = "${baseUrl}card 4.png";
+  static const card5 = "${baseUrl}card 5.png";
   static const background = "${baseUrl}background.png";
   static const background2 = "${baseUrl}background_2.png";
   static const successSignUp = "${baseUrl}success_signUp.png";

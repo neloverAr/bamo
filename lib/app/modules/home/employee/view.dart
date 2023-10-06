@@ -1,12 +1,8 @@
 
-import 'package:bamo/app/core/constants/padding.dart';
-import 'package:bamo/app/core/theme/app_text_style.dart';
 import 'package:bamo/app/core/values/icons.dart';
 import 'package:bamo/app/modules/EmployeeMainPagesContent/view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../employer/controller.dart';
 import 'controller.dart';
 
 class EmployeeHomePage extends StatelessWidget{

@@ -9,7 +9,7 @@ class AppTextStyles {
     fontSize: 10.sp,
     //fontWeight: FontWeight.w400,
     height: 1.3,
-    color: AppColor.titleBlack,
+    color: AppColor.titleBlack,//484848
     //fontFamily: fontMedium,
   );
   static TextStyle get m10 =>  TextStyle(
@@ -32,10 +32,30 @@ class AppTextStyles {
       height: 1.3,
       color: AppColor.labelBlack
   );
+  static TextStyle get m12 => TextStyle(
+      fontSize: 12.sp,
+      //fontWeight: FontWeight.w400,
+      fontFamily: fontMedium,
+      height: 1.3,
+      color: AppColor.labelBlack
+  );
+  static TextStyle get m12000000 => TextStyle(
+      fontSize: 12.sp,
+      //fontWeight: FontWeight.w400,
+      fontFamily: fontMedium,
+      height: 1.3,
+      color: Colors.black
+  );
   static TextStyle get m12484848 => TextStyle(
       fontSize: 12.sp,
       //fontWeight: FontWeight.w400,
       fontFamily: fontMedium,
+      height: 1.3,
+      color: AppColor.titleBlack
+  );
+  static TextStyle get b12 => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w600,
       height: 1.3,
       color: AppColor.titleBlack
   );
@@ -46,13 +66,13 @@ class AppTextStyles {
       fontFamily: fontMedium,
       color: AppColor.titleBlack
   );
-  static TextStyle get b12 => TextStyle(
-      fontSize: 12.sp,
-      fontWeight: FontWeight.w600,
-      height: 1.3,
-      color: AppColor.titleBlack
-  );
   static TextStyle get r14 =>  TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w500,
+      height: 1.3,
+      color: AppColor.labelBlack
+  );
+  static TextStyle get r14484848 =>  TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     height: 1.3,
@@ -74,6 +94,18 @@ class AppTextStyles {
       fontSize: 14.sp,
       fontWeight: FontWeight.bold,
       height: 1.3,
+      color: AppColor.labelBlack
+  );
+  static TextStyle get r15 =>  TextStyle(
+      fontSize: 15.sp,
+      height: 1.3,
+      fontFamily: fontRegular,
+      color: AppColor.titleBlack,//484848
+  );
+  static TextStyle get m15 =>  TextStyle(
+      fontSize: 15.sp,
+      height: 1.3,
+      fontFamily: fontMedium,
       color: AppColor.labelBlack
   );
   static TextStyle get r16 =>  TextStyle(

@@ -61,7 +61,7 @@ class SelectUserScreen extends StatelessWidget with StylesHelper{
             SizedBox(height: 131.h,),
             SafeArea(
               child: Text("Bamo, by Global Job",
-                style: AppTextStyles.r14.copyWith(color: Color(0xFF888888)),),
+                style: AppTextStyles.r14484848.copyWith(color: Color(0xFF888888)),),
             )
           ],
         ),

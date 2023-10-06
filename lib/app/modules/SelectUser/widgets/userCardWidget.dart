@@ -44,7 +44,7 @@ class UserCardWidget extends StatelessWidget {
           ),
           ), SizedBox(height:12.h,),
           Container(width:117.w,
-              child: Text(text,style: AppTextStyles.r14,
+              child: Text(text,style: AppTextStyles.r14484848,
             textAlign: TextAlign.center,)),
           Spacer(),
           AppButton(//color: Colors.white,

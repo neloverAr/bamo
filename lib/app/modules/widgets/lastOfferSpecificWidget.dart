@@ -26,47 +26,50 @@ class LastOfferSpecificWidget extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12)
       ),child: Column(children: [
-        Expanded(child: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(job.image),fit: BoxFit.fill)
-          ),child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(children: [
-                    TagProperty(icon: AppIcon.checked, property:
-                    GradientText("Vérifier",colors: greenColors,style: AppTextStyles.m10,)),
+        Expanded(child: Hero(
+          tag: "01110",
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(job.image),fit: BoxFit.fill)
+            ),child: Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(children: [
+                      TagProperty(icon: AppIcon.checked, property:
+                      GradientText("Vérifier",colors: greenColors,style: AppTextStyles.m10,)),
+                      SizedBox(width: 8.w,),
+                      TagProperty(icon:specificIcon, property:
+                      GradientText(specificType,colors: blueColors,style: AppTextStyles.m10,)),
+                    ],),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        gradient: job.jobType=="Permanent"?AppGradient.curvedGreyGradient:AppGradient.curvedBlackGradient
+                      ),child: Center(
+                      child: SvgPicture.asset(AppIcon.favorite),
+                    ),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    TagProperty(icon: AppIcon.easyApply,linearGradient: AppGradient.horizontalYellowGradient, property:
+                    Text("Inscription Facile",style: AppTextStyles.m10.copyWith(color: Colors.white),)),
                     SizedBox(width: 8.w,),
-                    TagProperty(icon:specificIcon, property:
-                    GradientText(specificType,colors: blueColors,style: AppTextStyles.m10,)),
-                  ],),
-                  Container(
-                    height: 36,
-                    width: 36,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      gradient: job.jobType=="Permanent"?AppGradient.curvedGreyGradient:AppGradient.curvedBlackGradient
-                    ),child: Center(
-                    child: SvgPicture.asset(AppIcon.favorite),
-                  ),
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  TagProperty(icon: AppIcon.easyApply,linearGradient: AppGradient.horizontalYellowGradient, property:
-                  Text("Inscription Facile",style: AppTextStyles.m10.copyWith(color: Colors.white),)),
-                  SizedBox(width: 8.w,),
-                  TagProperty(icon: AppIcon.candidates,linearGradient: AppGradient.horizontalBlueGradient, property:
-                  Text("${job.candidates} Candidats",style: AppTextStyles.m10.copyWith(color: Colors.white),)),
-                ],
-              )
-            ],
-        ),
+                    TagProperty(icon: AppIcon.candidates,linearGradient: AppGradient.horizontalBlueGradient, property:
+                    Text("${job.candidates} Candidats",style: AppTextStyles.m10.copyWith(color: Colors.white),)),
+                  ],
+                )
+              ],
+          ),
+            ),
           ),
         )),
       Expanded(child: Padding(

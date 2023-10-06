@@ -54,7 +54,7 @@ class AppDrawer extends StatelessWidget {
                       (index) => GestureDetector(
                       onTap: (){
                         controller.changePage(index);
-                        //Navigator.pop(context);
+                        Scaffold.of(context).closeDrawer();
                         Get.to(()=>controller.items[index].page);
                       },
                       child: DrawerLine(selected: controller.index.value==index,

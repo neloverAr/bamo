@@ -16,6 +16,8 @@ class AvatarWithEdit extends StatelessWidget {
         children: [
           SizedBox(
             child: CircleAvatar(
+              radius: radius,
+              backgroundImage: AssetImage(image),
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Container(
@@ -30,8 +32,6 @@ class AvatarWithEdit extends StatelessWidget {
                   ),
                 ),
               ),
-              radius: radius,
-              backgroundImage: AssetImage(image),
             ),),
         ]
     );

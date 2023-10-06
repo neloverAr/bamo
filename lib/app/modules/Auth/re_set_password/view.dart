@@ -55,7 +55,7 @@ class RestPasswordStepOneScreen extends StatelessWidget {
               21.hp,
               Text(
                 "Email",
-                style: AppTextStyles.r14,
+                style: AppTextStyles.r14484848,
               ),
               4.hp,
               Container(

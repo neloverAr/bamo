@@ -33,7 +33,9 @@ class ProfileScreen extends StatelessWidget {
           Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding),
-              child: InkWell(onTap:(){},
+              child: InkWell(onTap:(){
+
+              },
                 //Scaffold.of(context).openDrawer()
               child: GradientText("Enregistrer",colors: blueColors,)),
             ),

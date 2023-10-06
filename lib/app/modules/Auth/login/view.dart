@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
             24.hp,
             Text(
               "Email",
-              style: AppTextStyles.r14,
+              style: AppTextStyles.r14484848,
             ),
             4.hp,
             Container(
@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
             12.hp,
             Text(
               "Mot de Passe",
-              style: AppTextStyles.r14,
+              style: AppTextStyles.r14484848,
             ),
             4.hp,
             Container(
