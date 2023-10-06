@@ -16,6 +16,7 @@ main() async {
   await initialServices();
   StorageService storageService = Get.find();
   storageService.write(isLoggedIn, false);
+  
   runApp(const MyApp());
 }
 
