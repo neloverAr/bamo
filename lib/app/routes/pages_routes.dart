@@ -7,6 +7,9 @@ import 'package:bamo/app/modules/MainNavigation/employer/view.dart';
 import 'package:bamo/app/modules/SelectUser/view.dart';
 import 'package:bamo/app/modules/chats/view.dart';
 import 'package:bamo/app/modules/cv/view.dart';
+import 'package:bamo/app/modules/cv/widgets/addExperience/view.dart';
+import 'package:bamo/app/modules/cv/widgets/addLang/view.dart';
+import 'package:bamo/app/modules/cv/widgets/sectors/view.dart';
 import 'package:bamo/app/modules/freelancer/view.dart';
 import 'package:bamo/app/modules/home/employer/view.dart';
 import 'package:bamo/app/modules/partTime/view.dart';
@@ -15,6 +18,7 @@ import 'package:bamo/app/modules/splash/view.dart';
 import 'package:bamo/app/modules/stage/view.dart';
 import 'package:get/get.dart';
 import '../modules/MainNavigation/employee/view.dart';
+import '../modules/cv/widgets/addDesc/view.dart';
 import '../modules/home/employee/view.dart';
 
 class AppPages {
@@ -35,6 +39,10 @@ class AppPages {
     GetPage(name: AppRoutes.freelance, page: () => FreelancerScreen()),
     GetPage(name: AppRoutes.stage, page: () => StageScreen()),
     GetPage(name: AppRoutes.cvScreen, page: () => CVScreen()),
+    GetPage(name: AppRoutes.addDesc, page: () => DescriptionSectionScreen()),
+    GetPage(name: AppRoutes.addExperience, page: () => ExperienceSectionScreen()),
+    GetPage(name: AppRoutes.sectors, page: () => SectorsScreen()),
+    GetPage(name: AppRoutes.language, page: () => LanguageSectionScreen()),
   ];
 }
 
@@ -55,5 +63,9 @@ class AppRoutes {
   static const String freelance = '/Freelance';
   static const String stage = '/stage';
   static const String cvScreen = '/cv';
+  static const String addDesc = '/desc';
+  static const String addExperience = '/experience';
+  static const String sectors = '/sectors';
+  static const String language = '/language';
 
 }

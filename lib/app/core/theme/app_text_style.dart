@@ -32,6 +32,12 @@ class AppTextStyles {
       height: 1.3,
       color: AppColor.labelBlack
   );
+  static TextStyle get r12484848 => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.3,
+      color: AppColor.titleBlack
+  );
   static TextStyle get m12 => TextStyle(
       fontSize: 12.sp,
       //fontWeight: FontWeight.w400,

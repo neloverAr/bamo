@@ -6,7 +6,7 @@ import '../../core/constants/padding.dart';
 import '../../core/theme/app_text_style.dart';
 import '../../core/values/icons.dart';
 
-class AppBarWithEnregister extends StatelessWidget {
+class AppBarWithEnregister extends StatelessWidget implements PreferredSizeWidget{
   final String title;
   final Function() onTap;
   const AppBarWithEnregister({Key? key, required this.title, required this.onTap}) : super(key: key);
@@ -36,4 +36,8 @@ class AppBarWithEnregister extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

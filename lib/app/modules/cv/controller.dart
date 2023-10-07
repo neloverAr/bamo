@@ -1,4 +1,5 @@
 
+import 'package:bamo/app/routes/pages_routes.dart';
 import 'package:get/get.dart';
 class MonCVController extends GetxController {
 
@@ -17,6 +18,18 @@ class MonCVController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void goToDesc() {
+    Get.toNamed(AppRoutes.addDesc);
+  }
+
+  void goToExperience() {
+    Get.toNamed(AppRoutes.addExperience);
+  }
+
+  void goToLanguage() {
+    Get.toNamed(AppRoutes.language);
   }
 
 }

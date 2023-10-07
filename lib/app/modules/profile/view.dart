@@ -1,47 +1,25 @@
-import 'package:bamo/app/core/constants/AppGradient.dart';
+
 import 'package:bamo/app/core/constants/padding.dart';
-import 'package:bamo/app/core/theme/app_text_style.dart';
-import 'package:bamo/app/core/values/icons.dart';
 import 'package:bamo/app/core/values/images_path.dart';
+import 'package:bamo/app/modules/widgets/appBarWithEnregister.dart';
 import 'package:bamo/app/modules/widgets/avatarWithEdit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
-
+import 'package:get/get.dart';
 import '../widgets/profileTextField.dart';
+import 'controller.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  ProfileScreen({Key? key}) : super(key: key);
+  ProfileController controller = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal:15),
-          child: GestureDetector(
-            onTap: ()=>Navigator.pop(context),
-              child: SvgPicture.asset(AppIcon.back)),
-        ),
-        title: Text("Mon Profile",style: AppTextStyles.m18484848,),
-        actions: [
-          Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding),
-              child: InkWell(onTap:(){
-
-              },
-                //Scaffold.of(context).openDrawer()
-              child: GradientText("Enregistrer",colors: blueColors,)),
-            ),
-          ),
-        ],
-      ),
+      appBar: AppBarWithEnregister(title: "Mon Profile", onTap: (){
+        //TODO
+      }),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding,vertical: 32.h),
         children: [
@@ -49,19 +27,19 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(height: 40.h,),
           Column(
             children: [
-              ProfileTextField(labelText: 'Nom', hintText: 'First Name',),
+              ProfileTextField( hintText: 'First Name',controller:controller.firstNameController),
               SizedBox(height: 16.h,),
-              ProfileTextField(labelText: 'Prénom', hintText: 'Last Name',),
+              ProfileTextField(hintText: 'Last Name',controller:controller.lastNameController),
               SizedBox(height: 16.h,),
-              ProfileTextField( hintText: 'Date de naissance',),
+              ProfileTextField( hintText: 'Date de naissance',controller:controller.dateOfBirthController),
               SizedBox(height: 16.h,),
-              ProfileTextField(hintText: 'Adresse',),
+              ProfileTextField(hintText: 'Adresse',controller:controller.addressController),
               SizedBox(height: 16.h,),
-              ProfileTextField(hintText: 'Email',),
+              ProfileTextField(hintText: 'Email',controller:controller.emailController),
               SizedBox(height: 16.h,),
-              ProfileTextField(hintText: 'Téléphone',),
+              ProfileTextField(hintText: 'Téléphone',controller:controller.telephoneController),
               SizedBox(height: 16.h,),
-              ProfileTextField(hintText: 'Description',maxLines: 3,),
+              ProfileTextField(hintText: 'Description',maxLines: 3,controller:controller.descController),
               //SizedBox(height: 16.h,),
             ],
           )

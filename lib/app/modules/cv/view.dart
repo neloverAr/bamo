@@ -2,6 +2,7 @@ import 'package:bamo/app/core/constants/ContainerDecoration.dart';
 import 'package:bamo/app/core/utils/extensions.dart';
 import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/modules/widgets/addSectionBox.dart';
+import 'package:bamo/app/modules/widgets/appBarWithEnregister.dart';
 import 'package:bamo/app/modules/widgets/progressioIndicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,30 +22,10 @@ class CVScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal:15),
-          child: GestureDetector(
-              onTap: ()=>Navigator.pop(context),
-              child: SvgPicture.asset(AppIcon.back)),
-        ),
-        title: Text("Mon CV",style: AppTextStyles.m18484848,),
-        actions: [
-          Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding),
-              child: InkWell(onTap: (){
-                //TODO
-              },
-                  //Scaffold.of(context).openDrawer()
-                  child: GradientText("Enregistrer",colors: blueColors,)),
-            ),
-          ),
-        ],
-      ),body: ListView(
+      appBar: AppBarWithEnregister(title: "Mon CV", onTap: () {
+        //TODO
+      },),
+      body: ListView(
       padding: EdgeInsets.symmetric(horizontal: AppPadding.mainPadding,),
       children: [
         Container(
@@ -85,14 +66,17 @@ class CVScreen extends StatelessWidget {
           ),
         ),16.hp,
         AddSectionBox(onTap: (){
+          controller.goToDesc();
         }, sectionName: "Ajouter une Description",
             sectionDesc: "Ajouter une brève desdcription pour\nvous présenter aux entreprises")
         ,16.hp,
         AddSectionBox(onTap: (){
+          controller.goToExperience();
     }, sectionName: "Ajouter une Expérience",
     sectionDesc: "Ajouter vos expériences professionnelles pour\ntrouver l’offre qui vous correspond")
         ,16.hp,
         AddSectionBox(onTap: (){
+          controller.goToLanguage();
         }, sectionName: "Ajouter une Langue",
             sectionDesc: "Ajouter vos langues pour trouver l’offre qui vous\ncorrespond")
         ,16.hp,

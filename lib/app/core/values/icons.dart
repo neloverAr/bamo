@@ -57,9 +57,43 @@ class AppIcon{
   static const closeDrawer = "${baseUrl}closeDrawer.svg";
   static const logout = "${baseUrl}logout.svg";
   static const back = "${baseUrl}arrow-left.svg";
-  static const calender = "${baseUrl}calender.svg";
+  static const calender = "${baseUrl}calendar.svg";
   static const checkedSquare = "${baseUrl}tick-square.svg";
   static const galleryEdit = "${baseUrl}gallery-edit.svg";
+
+  static const jobTitle = "${baseUrl}document.svg";
+  static const arrowRight = "${baseUrl}arrow-right.svg";
+  static const level = "${baseUrl}arrow-circle-up.svg";
+  static const language = "${baseUrl}language.svg";
+  static const diplome = "${baseUrl}diplome.svg";
+
+  //sectors icons
+  static const sectorsUrl = "${baseUrl}sector/";
+  static const BTP = "${sectorsUrl}buliding.svg";
+  static const Entretien = "${sectorsUrl}flag.svg";
+  static const restauration = "${sectorsUrl}fluent_food-pizza-24-regular.svg";
+  static const Vente = "${sectorsUrl}tag.svg";
+  static const Commerce = "${sectorsUrl}shop.svg";
+  static const telemarketing = "${sectorsUrl}headphone.svg";
+  static const Programmation = "${sectorsUrl}code-circle.svg";
+  static const Design = "${sectorsUrl}brush.svg";
+  static const IT = "${sectorsUrl}monitor-mobbile.svg";
+  static const Education = "${sectorsUrl}teacher.svg";
+  static const Logistique = "${sectorsUrl}truck.svg";
+  static const Communication = "${sectorsUrl}messages-2.svg";
+  static const Immobilier = "${sectorsUrl}home-2.svg";
+  static const Sante = "${sectorsUrl}health.svg";
+  static const Evenementiel = "${sectorsUrl}calendar.svg";
+  static const Tourisme = "${sectorsUrl}airplane.svg";
+  static const Industrie = "${sectorsUrl}building.svg";
+  static const Administration = "${sectorsUrl}clipboard-text.svg";
+  static const Security = "${sectorsUrl}security-safe.svg";
+  static const Marketing = "${sectorsUrl}briefcase.svg";
+  static const Finance = "${sectorsUrl}dollar-square.svg";
+  static const Transport = "${sectorsUrl}truck-fast.svg";
+  static const Esthetique = "${sectorsUrl}grammerly.svg";
+  static const BienEtre = "${sectorsUrl}emoji-normal.svg";
+
 }
 
 
