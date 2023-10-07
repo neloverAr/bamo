@@ -46,6 +46,8 @@ dependencies:
   percent_indicator: ^4.2.3
   google_maps_flutter: ^2.5.0
   dotted_border: ^2.1.0
+  grouped_list: ^5.1.2
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

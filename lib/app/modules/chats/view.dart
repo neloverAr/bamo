@@ -1,8 +1,8 @@
 import 'package:bamo/app/core/constants/padding.dart';
 import 'package:bamo/app/core/theme/app_text_style.dart';
 import 'package:bamo/app/core/utils/extensions.dart';
+import 'package:bamo/app/modules/chats/widgets/MessagesScreen/view.dart';
 import 'package:bamo/app/modules/chats/widgets/chatWidget.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -30,7 +30,9 @@ class ChatsScreen extends StatelessWidget {
             itemBuilder: (BuildContext, index){
             return GestureDetector(
                 onTap: (){
-                  //Get.to();
+                  Get.to(MessagesScreen(messages: controller.todayChats[index].messages!,
+                      senderName: controller.todayChats[index].senderName!,
+                      senderAvatar: controller.todayChats[index].senderAvatar!));
                 },
                 child: ChatWidget(chat: controller.todayChats[index]));
           }, separatorBuilder: (BuildContext context, int index)
@@ -46,7 +48,9 @@ class ChatsScreen extends StatelessWidget {
             itemBuilder: (BuildContext, index){
               return GestureDetector(
                   onTap:(){
-
+                    Get.to(MessagesScreen(messages: controller.weekChats[index].messages!,
+                        senderName: controller.weekChats[index].senderName!,
+                        senderAvatar: controller.weekChats[index].senderAvatar!));
                   },
                   child: ChatWidget(chat: controller.weekChats[index]));
             }, separatorBuilder: (BuildContext context, int index)

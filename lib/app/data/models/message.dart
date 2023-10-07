@@ -3,6 +3,7 @@ class Message {
   int? chatId;
   String? message;
   bool? read;
+  bool? isSentByMe;
   int? senderName;
   String? senderAvatar;
   String? createdAt;
@@ -14,6 +15,7 @@ class Message {
         this.chatId,
         this.message,
         this.read,
+        this.isSentByMe,
         this.senderName,
         this.senderAvatar,
         this.createdAt,

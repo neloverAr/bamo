@@ -24,5 +24,6 @@ class AppImage{
   static const retailBusiness = "${baseUrl}calculator-dynamic-color.png";
   static const avatar = "${baseUrl}PDP 1.png";
   static const profile = "${baseUrl}profile.png";
+  static const sender = "${baseUrl}sender.png";
 
 }

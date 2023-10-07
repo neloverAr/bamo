@@ -19,6 +19,13 @@ class AppTextStyles {
     color: AppColor.Color9F9F9F,//484848
     //fontFamily: fontMedium,
   );
+  static TextStyle get r1005100B =>  TextStyle(
+    fontSize: 10.sp,
+    //fontWeight: FontWeight.w400,
+    height: 1.3,
+    color: AppColor.color05100B,//484848
+    //fontFamily: fontMedium,
+  );
   static TextStyle get r10797979 =>  TextStyle(
     fontSize: 10.sp,
     //fontWeight: FontWeight.w400,
