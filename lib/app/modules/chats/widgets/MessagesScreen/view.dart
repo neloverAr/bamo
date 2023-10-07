@@ -151,7 +151,13 @@ class MessagesScreen extends StatelessWidget {
                           children: [
                             InkWell(
                                 onTap: (){
-                                  // TODO
+                                  final message = Message(
+                                    message: controller.textController.text,
+                                    isSentByMe: true,
+                                    createdAt: DateTime.now().toString(),
+                                  );messages.add(message);
+                                  controller.textController.text="";
+
                                 },
                                 child: GradientText("Send",
                                   colors: blueColors,
@@ -161,12 +167,7 @@ class MessagesScreen extends StatelessWidget {
                     ),
                     onSubmitted: (String? message){
                       // TODO
-                      final message = Message(
-                          message: controller.textController.text,
-                        isSentByMe: true,
-                        createdAt: DateTime.now().toString(),
-                      );messages.add(message);
-                      controller.textController.text="";
+
                     },
 
                   ),
