@@ -18,8 +18,11 @@ class AppColor{
   static const Color blueGradient = Color(0xFF3E32D1);
   static const Color ColorF4F4F4= Color(0xFFF4F4F4);
   static const Color ColorF7F7F7= Color(0xFFF7F7F7);
+  static const Color Color797979= Color(0xFF797979);
+  static const Color Color9F9F9F= Color(0xFF9F9F9F);
   static const Color Color888888= Color(0xFF888888);
   static const Color colorD3D3D3= Color(0xFFD3D3D3);
+  static const Color color05100B= Color(0xFF05100B);
 
   static  Color greyGradient1= Color(0xFFEFEFEF).withOpacity(.6);
   static  Color greyGradient2= Color(0xFFFFFFFF).withOpacity(.08);

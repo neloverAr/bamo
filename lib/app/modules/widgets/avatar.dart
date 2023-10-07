@@ -1,3 +1,4 @@
+import 'package:bamo/app/core/values/colors.dart';
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
@@ -9,6 +10,7 @@ class Avatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: radius,
+      backgroundColor: AppColor.colorD9D9D9,
       backgroundImage: AssetImage(image),
     );
   }

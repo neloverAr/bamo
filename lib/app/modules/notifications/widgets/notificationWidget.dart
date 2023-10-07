@@ -4,6 +4,7 @@ import 'package:bamo/app/core/values/colors.dart';
 import 'package:bamo/app/data/models/Notification.dart';
 import 'package:bamo/app/modules/widgets/AppButton.dart';
 import 'package:bamo/app/modules/widgets/AppButtonFittedWidth.dart';
+import 'package:bamo/app/modules/widgets/notSeenDot.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -65,16 +66,10 @@ class NotificationWidget extends StatelessWidget {
                   color: AppColor.ColorF4F4F4,
                 )
               ],
-            )),(notification.seen==false)?Expanded(flex:1,child:
+            )),(notification.seen==false)?const Expanded(flex:1,child:
             Column(
               children: [
-                Container(
-                  height: 8,width: 8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: AppGradient.curvedBlueGradient
-                  ),
-                )
+                NotSeenDot(),
               ],
             )):Expanded(flex:1,child: SizedBox()),
           ],

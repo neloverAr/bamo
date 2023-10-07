@@ -20,7 +20,7 @@ class EmployerMainNavigationController extends GetxController {
           title: "Mes Offres"
       ),
       PageData(
-          page:  const ChatsScreen(),
+          page:  ChatsScreen(),
           icon: AppIcon.chats,
           title: "chats"
       ),

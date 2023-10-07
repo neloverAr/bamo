@@ -12,6 +12,20 @@ class AppTextStyles {
     color: AppColor.titleBlack,//484848
     //fontFamily: fontMedium,
   );
+  static TextStyle get r109F9F9F =>  TextStyle(
+    fontSize: 10.sp,
+    //fontWeight: FontWeight.w400,
+    height: 1.3,
+    color: AppColor.Color9F9F9F,//484848
+    //fontFamily: fontMedium,
+  );
+  static TextStyle get r10797979 =>  TextStyle(
+    fontSize: 10.sp,
+    //fontWeight: FontWeight.w400,
+    height: 1.3,
+    color: AppColor.Color797979,//484848
+    //fontFamily: fontMedium,
+  );
   static TextStyle get m10 =>  TextStyle(
       fontSize: 10.sp,
       //fontWeight: FontWeight.w400,
@@ -44,6 +58,20 @@ class AppTextStyles {
       fontFamily: fontMedium,
       height: 1.3,
       color: AppColor.labelBlack
+  );
+  static TextStyle get m1205100B => TextStyle(
+      fontSize: 12.sp,
+      //fontWeight: FontWeight.w400,
+      fontFamily: fontMedium,
+      height: 1.3,
+      color: AppColor.color05100B
+  );
+  static TextStyle get m12797979 => TextStyle(
+      fontSize: 12.sp,
+      //fontWeight: FontWeight.w400,
+      fontFamily: fontMedium,
+      height: 1.3,
+      color: AppColor.Color797979
   );
   static TextStyle get m12000000 => TextStyle(
       fontSize: 12.sp,
@@ -89,6 +117,12 @@ class AppTextStyles {
       height: 1.3,
       fontFamily: fontMedium,
       color: AppColor.labelBlack
+  );
+  static TextStyle get m1405100B =>  TextStyle(
+      fontSize: 14.sp,
+      height: 1.3,
+      fontFamily: fontMedium,
+      color: AppColor.color05100B
   );
   static TextStyle get m14484848 =>  TextStyle(
       fontSize: 14.sp,
