@@ -1,16 +1,3 @@
 # bamo
 
-"A new Flutter project."
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bamo app caters to two user groups: employers who can post job listings, and employees who can find suitable employment opportunities. Its features include job type classification such as full-time, part-time, or freelance positions. Acting as a bridge between employers and employees, Bamo boasts an appealing design with seamless animations for user interaction.
